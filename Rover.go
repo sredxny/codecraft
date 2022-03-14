@@ -8,11 +8,15 @@ type Rover struct {
 const (
 	NORTH = "N"
 	SOUTH = "S"
-	EAST = "E"
-	WEST = "W"
+	EAST  = "E"
+	WEST  = "W"
+
 	RIGHT = "R"
-	LEFT = "L"
-	)
+	LEFT  = "L"
+
+	FORWARD  = "F"
+	BACKWARD = "B"
+)
 
 func (r *Rover) Rotate(rotation string) {
 	if r.Direction == NORTH && rotation == LEFT {
@@ -26,10 +30,10 @@ func (r *Rover) Rotate(rotation string) {
 
 func (r *Rover) Move(FoB string) {
 
-	if FoB == "F" {
-		if r.Direction == NORTH{
+	if FoB == FORWARD {
+		if r.Direction == NORTH {
 			r.Y++
-		}else if r.Direction == SOUTH{
+		} else if r.Direction == SOUTH {
 			r.Y--
 		}
 
