@@ -35,6 +35,10 @@ func (r *Rover) Move(FoB string) {
 			r.Y++
 		} else if r.Direction == SOUTH {
 			r.Y--
+		}else if r.Direction == EAST {
+			r.X++
+		}else if r.Direction == WEST {
+			r.X--
 		}
 
 	} else {
