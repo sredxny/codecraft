@@ -5,14 +5,12 @@ import (
 	"testing"
 )
 
-// current coordenadas
-// rotacion
-// movimientos = front / back
-
 func Test_CoordinatesRover(t *testing.T) {
-	r := Rover{}
-	r.X = 100
-	r.Y = 200
+	r := Rover{
+		X:         110,
+		Y:         220,
+		Direction: "",
+	}
 
 	assert.Equal(t, r.X, 100, "X coordinate should be 100")
 	assert.Equal(t, r.Y, 200, "Y coordinate should be 200")
