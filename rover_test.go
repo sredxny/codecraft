@@ -11,8 +11,8 @@ import (
 
 func Test_CoordinatesRover(t *testing.T){
 	r := Rover{}
-	r.SetX(100)
-	r.SetY(200)
+	r.X = 100
+	r.Y = 200
 
 	assert.Equal(t,r.X,100,"X coordinate should be 100")
 	assert.Equal(t, r.Y, 200, "Y coordinate should be 200")

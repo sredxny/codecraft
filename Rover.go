@@ -5,14 +5,6 @@ type Rover struct {
 	Direction string
 }
 
-func (r *Rover) SetX(i int) {
-	r.X = i
-}
-
-func (r *Rover) SetY(i int) {
-	r.Y = i
-}
-
 func (r *Rover) Rotate(rotation string) {
 	if r.Direction == "N" && rotation == "L" {
 		r.Direction = "W"
