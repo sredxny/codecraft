@@ -73,10 +73,40 @@ func Test_Movement(t *testing.T) {
 	})
 
 	t.Run("backward", func(t *testing.T) {
-		r := Rover{}
-		r.Direction = NORTH
-		r.Move(BACKWARD)
-		assert.Equal(t, r.X, 0)
-		assert.Equal(t, r.Y, -1)
+
+		t.Run("facing north", func(t *testing.T) {
+			r := Rover{}
+			r.Direction = NORTH
+			r.Move(BACKWARD)
+			assert.Equal(t, r.X, 0)
+			assert.Equal(t, r.Y, -1)
+		})
+
+		t.Run("south side", func(t *testing.T) {
+			r := Rover{}
+			r.Direction = SOUTH
+
+			r.Move(BACKWARD)
+			assert.Equal(t, r.X, 0)
+			assert.Equal(t, r.Y, 1)
+		})
+
+		t.Run("east side", func(t *testing.T) {
+			r := Rover{}
+			r.Direction = EAST
+
+			r.Move(BACKWARD)
+			assert.Equal(t, r.X, -1)
+			assert.Equal(t, r.Y, 0)
+		})
+
+		t.Run("west side", func(t *testing.T) {
+			r := Rover{}
+			r.Direction = WEST
+
+			r.Move(BACKWARD)
+			assert.Equal(t, r.X, 1)
+			assert.Equal(t, r.Y, 0)
+		})
 	})
 }
