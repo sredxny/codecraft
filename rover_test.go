@@ -37,76 +37,46 @@ func Test_Movement(t *testing.T) {
 	t.Run("forward", func(t *testing.T) {
 
 		t.Run("facing north", func(t *testing.T) {
-			r := Rover{}
-			r.Direction = NORTH
-			r.Move(FORWARD)
-			assert.Equal(t, r.X, 0)
-			assert.Equal(t, r.Y, 1)
+			evaluateMovement(t, NORTH, FORWARD, 0, 1)
 		})
 
 		t.Run("south side", func(t *testing.T) {
-			r := Rover{}
-			r.Direction = SOUTH
-
-			r.Move(FORWARD)
-			assert.Equal(t, r.X, 0)
-			assert.Equal(t, r.Y, -1)
+			evaluateMovement(t, SOUTH, FORWARD, 0, -1)
 		})
 
 		t.Run("east side", func(t *testing.T) {
-			r := Rover{}
-			r.Direction = EAST
-
-			r.Move(FORWARD)
-			assert.Equal(t, r.X, 1)
-			assert.Equal(t, r.Y, 0)
+			evaluateMovement(t, EAST, FORWARD, 1, 0)
 		})
 
 		t.Run("west side", func(t *testing.T) {
-			r := Rover{}
-			r.Direction = WEST
-
-			r.Move(FORWARD)
-			assert.Equal(t, r.X, -1)
-			assert.Equal(t, r.Y, 0)
+			evaluateMovement(t, WEST, FORWARD, -1, 0)
 		})
 	})
 
 	t.Run("backward", func(t *testing.T) {
 
 		t.Run("facing north", func(t *testing.T) {
-			r := Rover{}
-			r.Direction = NORTH
-			r.Move(BACKWARD)
-			assert.Equal(t, r.X, 0)
-			assert.Equal(t, r.Y, -1)
+			evaluateMovement(t, NORTH, BACKWARD, 0, -1)
 		})
 
 		t.Run("south side", func(t *testing.T) {
-			r := Rover{}
-			r.Direction = SOUTH
-
-			r.Move(BACKWARD)
-			assert.Equal(t, r.X, 0)
-			assert.Equal(t, r.Y, 1)
+			evaluateMovement(t, SOUTH, BACKWARD, 0, 1)
 		})
 
 		t.Run("east side", func(t *testing.T) {
-			r := Rover{}
-			r.Direction = EAST
-
-			r.Move(BACKWARD)
-			assert.Equal(t, r.X, -1)
-			assert.Equal(t, r.Y, 0)
+			evaluateMovement(t, EAST, BACKWARD, -1, 0)
 		})
 
 		t.Run("west side", func(t *testing.T) {
-			r := Rover{}
-			r.Direction = WEST
-
-			r.Move(BACKWARD)
-			assert.Equal(t, r.X, 1)
-			assert.Equal(t, r.Y, 0)
+			evaluateMovement(t, WEST, BACKWARD, 1, 0)
 		})
 	})
+}
+
+func evaluateMovement(t *testing.T, direction string, movement string, x int, y int) {
+	r := Rover{}
+	r.Direction = direction
+	r.Move(movement)
+	assert.Equal(t, r.X, x)
+	assert.Equal(t, r.Y, y)
 }
