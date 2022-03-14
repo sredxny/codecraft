@@ -22,15 +22,15 @@ func Test_Rotation(t *testing.T){
 	r := Rover{}
 
 	t.Run("Rotate to left", func(t *testing.T) {
-		r.Direction = "N"
+		r.Direction = NORTH
 		r.Rotate("L")
-		assert.Equal(t,r.Direction,"W")
+		assert.Equal(t,r.Direction,WEST)
 	})
 
 	t.Run("Rotate to right", func(t *testing.T) {
-		r.Direction = "N"
+		r.Direction = NORTH
 		r.Rotate("R")
-		assert.Equal(t,r.Direction,"E")
+		assert.Equal(t,r.Direction,EAST)
 	})
 }
 
@@ -40,7 +40,7 @@ func Test_Movement(t *testing.T){
 
 		t.Run("facing north", func(t *testing.T) {
 			r := Rover{}
-			r.Direction = "N"
+			r.Direction = NORTH
 			r.Move("F")
 			assert.Equal(t,r.X,0)
 			assert.Equal(t,r.Y,1)
@@ -48,7 +48,7 @@ func Test_Movement(t *testing.T){
 
 		t.Run("south side", func(t *testing.T) {
 			r := Rover{}
-			r.Direction = "S"
+			r.Direction = SOUTH
 
 			r.Move("F")
 			assert.Equal(t,r.X,0)
@@ -59,7 +59,7 @@ func Test_Movement(t *testing.T){
 
 	t.Run("backward", func(t *testing.T) {
 		r := Rover{}
-		r.Direction = "N"
+		r.Direction = NORTH
 		r.Move("B")
 		assert.Equal(t,r.X,0)
 		assert.Equal(t,r.Y,-1)
