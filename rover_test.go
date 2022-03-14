@@ -23,13 +23,13 @@ func Test_Rotation(t *testing.T){
 
 	t.Run("Rotate to left", func(t *testing.T) {
 		r.Direction = NORTH
-		r.Rotate("L")
+		r.Rotate(LEFT)
 		assert.Equal(t,r.Direction,WEST)
 	})
 
 	t.Run("Rotate to right", func(t *testing.T) {
 		r.Direction = NORTH
-		r.Rotate("R")
+		r.Rotate(RIGHT)
 		assert.Equal(t,r.Direction,EAST)
 	})
 }

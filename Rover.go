@@ -10,15 +10,16 @@ const (
 	SOUTH = "S"
 	EAST = "E"
 	WEST = "W"
-
+	RIGHT = "R"
+	LEFT = "L"
 	)
 
 func (r *Rover) Rotate(rotation string) {
-	if r.Direction == NORTH && rotation == "L" {
+	if r.Direction == NORTH && rotation == LEFT {
 		r.Direction = WEST
 	}
 
-	if r.Direction == NORTH && rotation == "R" {
+	if r.Direction == NORTH && rotation == RIGHT {
 		r.Direction = EAST
 	}
 }
