@@ -1,4 +1,4 @@
-package ___rover
+package rover
 
 type Rover struct {
 	X, Y      int

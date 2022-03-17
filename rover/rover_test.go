@@ -1,4 +1,4 @@
-package ___rover
+package rover
 
 import (
 	"github.com/magiconair/properties/assert"
